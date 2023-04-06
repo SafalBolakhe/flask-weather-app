@@ -1,0 +1,36 @@
+.header
+{
+    color: rgb(126, 41, 30);
+}
+.navbar
+{
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(153, 201, 201);
+    height: 100px;
+    font-size: x-large;
+}
+.main
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    background-color: aliceblue;
+    flex-direction: column;
+}
+.box
+{
+    border: 1px solid;
+    padding: 50px;
+    border-radius: 20px;
+    border-color: rgb(102, 163, 163);
+    background-color: aquamarine;
+}
+.input
+{
+    padding: 10px;
+}
