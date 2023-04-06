@@ -8,8 +8,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///product.sqlite3'
 db = SQLAlchemy(app)
 
 
-lat = 27.7172
-longi = 85.3240
+
 @app.route('/')
 def home():
     url = 'https://api.open-meteo.com/v1/forecast?latitude=%f&longitude=%f&current_weather=true' % (
@@ -29,7 +28,11 @@ def locate():
         location = location.strip()
         if (location != ''):
             r = requests.get(url=url+"{"+location+"}")
+
             data = r.json()
+            print(data)
+            if data == []:
+                return(located(27.7172, 85.3240, "Kathmandu"))
             lat = float(data[0]['lat'])
             longi = float(data[0]['lon'])
             place = data[0]["display_name"]
