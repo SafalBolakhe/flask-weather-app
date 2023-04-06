@@ -11,13 +11,7 @@ db = SQLAlchemy(app)
 
 @app.route('/')
 def home():
-    url = 'https://api.open-meteo.com/v1/forecast?latitude=%f&longitude=%f&current_weather=true' % (
-        lat, longi)
-    r = requests.get(url).text
-    response = json.loads(r)
-    # print(r)
-    # print(url)
-    return render_template("index.html", test=response)
+    return render_template("index.html")
 
 
 @app.route('/locate', methods=['POST', 'GET'])
